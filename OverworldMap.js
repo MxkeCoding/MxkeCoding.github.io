@@ -23,8 +23,35 @@ class OverworldMap {
       this.upperImage, 
       utils.withGrid(10.5) - cameraPerson.x, 
       utils.withGrid(6) - cameraPerson.y
-      )
+    )
   } 
+
+  isSpaceTaken(currentX, currentY, direction) {
+    const {x,y} = utils.nextPosition(currentX, currentY, direction);
+    return this.walls[`${x},${y}`] || false;
+  }
+
+  mountObjects() {
+    Object.values(this.gameObjects).forEach(o => {
+
+      //TODO: determine if this object should actually mount
+      o.mount(this);
+
+    })
+  }
+
+  addWall(x,y) {
+    this.walls[`${x},${y}`] = true;
+  }
+  removeWall(x,y) {
+    delete this.walls[`${x},${y}`]
+  }
+  moveWall(wasX, wasY, direction) {
+    this.removeWall(wasX, wasY);
+    const {x,y} = utils.nextPosition(wasX, wasY, direction);
+    this.addWall(x,y);
+  }
+
 }
 
 window.OverworldMaps = {
@@ -56,8 +83,8 @@ window.OverworldMaps = {
     gameObjects: {
       hero: new Person({
         isPlayerControlled: true,
-        x: utils.withGrid(5),
-        y: utils.withGrid(6),
+        x: utils.withGrid(3),
+        y: utils.withGrid(5),
       }),
       npcA: new Person({
         x: utils.withGrid(9),
