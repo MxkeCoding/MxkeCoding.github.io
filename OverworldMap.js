@@ -71,6 +71,53 @@ window.OverworldMaps = {
       })
     },
     walls: {
+
+      //right wall
+      [utils.asGridCoord(11,4)] : true,
+      [utils.asGridCoord(11,5)] : true,
+      [utils.asGridCoord(11,6)] : true,
+      [utils.asGridCoord(11,7)] : true,
+      [utils.asGridCoord(11,8)] : true,
+      [utils.asGridCoord(11,9)] : true,
+
+      //left wall
+      [utils.asGridCoord(0,4)] : true,
+      [utils.asGridCoord(0,5)] : true,
+      [utils.asGridCoord(0,6)] : true,
+      [utils.asGridCoord(0,7)] : true,
+      [utils.asGridCoord(0,8)] : true,
+
+      //bottom wall 1
+      [utils.asGridCoord(1,10)] : true,
+      [utils.asGridCoord(2,10)] : true,
+      [utils.asGridCoord(3,10)] : true,
+      [utils.asGridCoord(4,10)] : true,
+
+      //bottom wall 2
+      [utils.asGridCoord(6,10)] : true,
+      [utils.asGridCoord(7,10)] : true,
+      [utils.asGridCoord(8,10)] : true,
+      [utils.asGridCoord(9,10)] : true,
+      [utils.asGridCoord(10,10)] : true,
+
+      //top wall 1
+      [utils.asGridCoord(1,3)] : true,
+      [utils.asGridCoord(2,3)] : true,
+      [utils.asGridCoord(3,3)] : true,
+      [utils.asGridCoord(4,3)] : true,
+      [utils.asGridCoord(5,3)] : true,
+
+      //top wall 2
+      [utils.asGridCoord(6,4)] : true,
+      [utils.asGridCoord(8,4)] : true,
+      [utils.asGridCoord(7,4)] : true,
+
+      //top wall 3
+      [utils.asGridCoord(9,3)] : true,
+      [utils.asGridCoord(10,3)] : true,
+
+      //pillar
+      [utils.asGridCoord(0,9)] : true,
       [utils.asGridCoord(7,6)] : true,
       [utils.asGridCoord(8,6)] : true,
       [utils.asGridCoord(7,7)] : true,
